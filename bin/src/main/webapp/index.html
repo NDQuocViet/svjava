@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>e-Com</title>
+</head>
+<body>
+	<h1>HTML - Lesson 1</h1>
+	<hr />
+	<form action="index.html" method="get">
+		<table border="1" style="border: 1px;">
+			<tr>
+				<td>User name:</td>
+				<td>
+					<input name="userName" type="text" width="150px;">
+				</td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td>
+					<input name="password" type="password" width="130px">
+				</td>
+			</tr>
+			<tr>
+				<td>Ghi chu:</td>
+				<td>
+					<textarea rows="5" cols="25" name="notes"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Che do hien thi:</td>
+				<td>
+					<input type="radio" name="BackgroundColor"> Black <br/>
+					<input type="radio" name="BackgroundColor"> White
+				</td>
+			</tr>
+			<tr>
+				<td>Du lieu hien thi:</td>
+				<td>
+					<input type="checkbox" name="Data1" value="Data 1" title="Data 1"> Data 1
+					<input type="checkbox" name="Data2" value="Data 2" title="Data 2"> Data 2
+					<input type="checkbox" name="Data3" value="Data 3" title="Data 3"> Data 3
+				</td>
+			</tr>
+			<tr>
+				<td width="400px" colspan="2" align="center">
+					<input type="submit" title="Login" style="padding: 3px 10px; margin: 10px">
+					<input type="reset" title="Nhap lai" style="padding: 3px 10px; margin: 10px">
+					<button>Cancel</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<hr/>
+	<p>Trang web bán hàng.</p>
+	<hr />
+	<div style="width: 90%; border: 1px solid blue; padding: 5px; margin: 2px;">
+		<h2 style="color: blue">I. Thong tin gioi thieu</h2>
+		<font color="red" > Danh sach thong tin can quan tam: </font><br/>
+		<p style="padding-left: 20px;">
+			<b>1. Thong tin cua ung dung</b> <br /> 
+			<i>2. Thong tin lien he</i><br /> 
+			<u>3. Dia chi van phong </u><br />
+			4. Gia tri cua 2<sup>2</sup> = 4<br/>
+			5. Gia tri cua Log<sub>2</sub>(10) = .... <br/>
+		</p>
+		Danh sach lop tham gia: <BR/>
+		<ol type="a">
+			<li>Lop 1A1</li>
+			<li>Lop 1A2</li>
+			<li>Lop 1A3</li>
+			<li>Lop 1A4</li>
+		</ol>
+		
+		<hr style="width: 50%"/>
+		
+		<img alt="Game Images" height="250px" 
+			src="imgs/IMG_9668.heic">
+			
+		<hr style="width: 70%"/>
+		<a href="http://w3schools.com" title="Trang Web W3School" target="_blank">W3School.com</a>
+	</div>
+	
+	<div>
+		<table border="1">
+			<caption> Danh sach sinh vien</caption>
+			<tr>
+				<th bgcolor="yellow">Student-Code</th>
+				<th bgcolor="yellow">Full name</th>
+				<th bgcolor="yellow">Email</th>
+			</tr>
+			<tr>
+				<td>ST01</td>
+				<td>Nguyen Van A</td>
+				<td>nguyenvana@gmail.com</td>
+			</tr>
+			<tr>
+				<td>ST02</td>
+				<td>Nguyen Van B</td>
+				<td>nguyenvanb@gmail.com</td>
+			</tr>
+			<tr>
+				<td>ST03</td>
+				<td>Nguyen Van C</td>
+				<td>nguyenvanc@gmail.com</td>
+			</tr>
+		</table>
+	
+	</div>
+	
+	<script>
+		var fruits = ["Banana", "Orange", "Apple", "Mango" ];
+		
+		function showData(eleId) {
+			element = document.getElementById(eleId);
+			innHtml = "<ul>";
+			for(i = 0; i < fruits.length ; i ++) {
+				innHtml += "<li>";
+				innHtml += fruits [ i ];
+				innHtml += "</li>";
+			}
+			innHtml += "</ul>";
+			element.innerHTML = innHtml;
+			console.log(innHtml);
+		}
+		
+		function arrayReverse(){
+			showData('fruitsList')
+			
+			for( i = 0; i < fruits.length / 2; i ++) {
+				value = fruits [ i ];
+				fruits [i] = fruits [ fruits.length - i - 1 ];
+				fruits [fruits.length - i - 1] = value;
+			}
+			
+			showData('fruitsListReverse');
+		}
+	</script>
+	<div style="border: 1px solid red; padding: 10px; margin: 5px; width: 100%">
+		<div id="fruitsList"></div>
+		
+		<div style="border: 1px solid red; padding: 10px; margin: 5px; width: 100%">
+			<input type="button" value="Show" onclick="showData('fruitsList')"/>
+			<input type="button" value="Reverse" onclick="arrayReverse()"/>
+		</div>
+		
+		<div id="fruitsListReverse"></div>
+	</div>
+</body>
+</html>
