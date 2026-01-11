@@ -76,4 +76,14 @@ public class CustomerRepo extends JDBCMain {
 		this.insertData("customer", cm);
 		
 	}
+	public void delete(String userName){
+		StringBuilder sql = new StringBuilder("delete from customer where userName = ?");
+		List<String> paramList = new ArrayList<String>();
+		paramList.add(userName);
+		try {
+			this.executeQueryWithParams(sql.toString(), paramList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
